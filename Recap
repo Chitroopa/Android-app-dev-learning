@@ -12,3 +12,25 @@ Free illustrations
 Color palettes
   color hunt - https://colorhunt.co/
   http://paletton.com/
+
+Android studio
+  Log.d("myTask", "message") - logs in logcat
+  
+Kotlin coroutines
+  Coroutines - light weight thread, independent workers can work for diffrent tread
+  suspend funtions - can be called within coroutines or another suspend functions
+  GlobalScope - coroutines will not cancelled prematurely. they live for whole application lifetime
+  Coroutine scope
+  withContext - helps to switch to diffrent tread.
+  Dipatchers- ex.GlobalScope.Launch(Dispatchers.main). Dispacthers.Main - Starts coroutine in the main thread
+            -Dispatchers.IO  performs all the data operations such as networking, reading, or writing from the database, reading, or writing to the files
+            -Dispatchers.Default used when Complex or longrunning calculations are used
+            -Dispatchers.Unconfined 
+  runBlocking - blocks main thread flow. can be used to call suspend functions
+  async - use when we need to wait on results. ex Api calling. Its a defered function
+  await - wait till the async coroutine complete 
+        ex  var ans = async{ networkcall() }
+            Log.d("TAG", "result of network call is ${ans.await()"}
+  lifecycleScope - 
+  viewModelScope - keep corouties alive as long as view model is alive
+  awaitResponse() - use response.boody()
